@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ setSiteState }) => {
                     <ul className="flex space-x-4">
                         <li><Button onClick={() => setSiteState("timer")} className="hover:underline">タイマー</Button></li>
                         <li><Button onClick={() => setSiteState("roulette")} className="hover:underline">ルーレット</Button></li>
-                        <li><Button onClick={() => setSiteState("null")} className="hover:underline">Home</Button></li>
+                        <li><Button onClick={() => setSiteState("word")} className="hover:underline">文章入力</Button></li>
                     </ul>
                 </nav>
             </div>

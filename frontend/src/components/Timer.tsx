@@ -23,7 +23,7 @@ export default function Timer(): JSX.Element {
     };
 
     return (
-        <div className="w-full border flex flex-col items-center justify-center border-gray-500 p-4 rounded">
+        <div className="w-full border flex flex-col items-center justify-center border-gray-500 p-4 rounded bg-bgBlue">
             <div className="text-white text-xl text-center mb-4">{formatTime(time)}</div>
             <div className="flex space-x-4">
                 <Button onClick={() => setIsRunning(!isRunning)}

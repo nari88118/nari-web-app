@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import Timer from '../module/Timer';
+import Timer from '../components/Timer';
 import Header from '../components/Header';
-import Roulette from '../module/Roulette';
-const Live2DViewer = dynamic(() => import('../module/Live2DViewer'),
+import Roulette from '../components/Roulette';
+import Word from '../components/Word';
+const Live2DViewer = dynamic(() => import('../components/Live2DViewer'),
   {
     ssr: false,
     loading: () => <p>Loading...</p>,
@@ -18,6 +19,7 @@ export default function Home() {
         <Live2DViewer />
         {siteState === "timer" ? <Timer /> : null}
         {siteState === "roulette" ? <Roulette /> : null}
+        {siteState === "word" ? <Word/> : null}
       </div>
     </div>
   );
