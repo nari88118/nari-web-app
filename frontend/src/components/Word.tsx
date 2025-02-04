@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Textarea } from '../components/ui/textarea';
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
 
 const Word = () => {
     const [text, setText] = useState("");
+    const [name, setName] = useState("");
     const saveToFile = async () => {
         const response = await fetch("/api/saveText", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text }),
+            body: JSON.stringify({ text: text, fileName: name }),
         });
 
         if (response.ok) {
@@ -25,6 +27,12 @@ const Word = () => {
                 className="border border-gray-500 p-2 rounded text-white font-bold h-80"
                 placeholder="文章を入力"
                 rows={10}
+            />
+            <Input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="border border-gray-500 p-2 rounded text-white font-bold mt-4"
+                placeholder="ファイル名"
             />
             <Button onClick={saveToFile} className="bg-bgBlue text-white p-4 rounded mt-4">
                 保存

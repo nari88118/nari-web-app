@@ -7,12 +7,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         return res.status(405).json({ message: "Method not allowed" });
     }
 
-    const { text } = req.body;
+    const { text, fileName } = req.body;
     if (!text) {
         return res.status(400).json({ message: "テキストが空です" });
     }
 
-    const filePath = path.join(process.cwd(), "public", "text/saved_text.txt");
+    const filePath = path.join(process.cwd(), "public", "text/" + fileName + ".txt");
 
     try {
         fs.writeFileSync(filePath, text, "utf8");
