@@ -1,6 +1,9 @@
 # nariWebApp
 このプロジェクトは、**Next.js** フレームワークを使用して構築された、Live2DモデルをWeb上で動かすアプリケーションです。  
-制作者が作業する際に便利だと思った様々な機能も組み込んでいます。  
+制作者が作業する際に便利だと思った様々な機能も組み込んでいます!
+
+動作イメージ
+![image](https://github.com/user-attachments/assets/22a1e992-ec5b-4b19-9119-82f6954a932b)
 
 ## 📥 Live2D Cubism SDK for Web の導入方法
 
