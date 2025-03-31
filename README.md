@@ -26,11 +26,11 @@ live2d.min.js は公式から提供されていないため、有志による提
 公式SDKより **`live2dcubismcore.min.js`** と上でダウンロードした **`live2d.min.js`** を以下のディレクトリに配置してください：
 
 - public
-  └ nari
-  └ raguto
-  └ text
-  └ live2dcubismcore.min.js
-  └ live2d.min.js
+- └ nari
+- └ raguto
+- └ text
+- └ live2dcubismcore.min.js
+- └ live2d.min.js
 
 
 ## 🚀 使用技術スタック
