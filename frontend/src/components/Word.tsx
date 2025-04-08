@@ -3,7 +3,7 @@ import { Textarea } from '../components/ui/textarea';
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
-const Word = () => {
+export default function Word(): JSX.Element {
     const [text, setText] = useState("");
     const [name, setName] = useState("");
     const saveToFile = async () => {
@@ -34,10 +34,9 @@ const Word = () => {
                 className="border border-gray-500 p-2 rounded text-white font-bold mt-4"
                 placeholder="ファイル名"
             />
-            <Button onClick={saveToFile} className="bg-bgBlue text-white p-4 rounded mt-4">
+            <Button onClick={saveToFile} className="bg-bgBlue text-white p-4 rounded mt-4 border border-gray-500">
                 保存
             </Button>
         </div>
     );
 }
-export default Word;

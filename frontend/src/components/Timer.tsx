@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Button } from '../components/ui/button';
+
 export default function Timer(): JSX.Element {
     const [time, setTime] = React.useState(0);
     const [isRunning, setIsRunning] = React.useState(false);

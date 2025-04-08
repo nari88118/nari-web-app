@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-const Roulette: React.FC = () => {
+
+export default function Roulette(): JSX.Element {
   const [sections, setSections] = useState<string[] | null>(null);
   const [newSection, setNewSection] = useState<string>('');
 
@@ -81,5 +82,3 @@ const Roulette: React.FC = () => {
     </div>
   );
 };
-
-export default Roulette;
