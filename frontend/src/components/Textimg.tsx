@@ -11,23 +11,37 @@ export default function Textimg(): JSX.Element {
     const [images, setImages] = useState<string[]>([]);
 
     const renderImageTags = useMemo(() => {
-
+        return (markdown: string, images: string[]) => {
+            // Process markdown and images as needed
+            return markdown; // Replace this with actual logic if needed
+        };
     }, []);
     return (
         <div className="editor-viewer-container">
 
-            {/* テキストエディター部分 */}
             <Textarea
                 value={markdown}
                 onChange={(e) => setMarkdown(e.target.value)}
                 className="w-full h-64 p-4 border"
                 placeholder="Markdownでメモを入力..."
             />
+            <Button>
+                <Input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                        const files = e.target.files;
+                        if (files) {
+                            const newImages = Array.from(files).map(file => URL.createObjectURL(file));
+                            setImages(prev => [...prev, ...newImages]);
+                        }
+                    }}
+                />
+            </Button>
 
-            {/* 表示部分（Markdown + 画像レンダリング） */}
             <div className="markdown-viewer p-4 border mt-4">
                 <ReactMarkdown
-                    // children={renderImageTags(markdown, images)}
+                    children={renderImageTags(markdown, images)}
                     components={{
                         img: ({ node, ...props }) => (
                             <img {...props} style={{ maxWidth: '100%', height: 'auto' }} />
